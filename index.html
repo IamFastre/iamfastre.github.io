@@ -1,44 +1,88 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="img" href="https://avatars.githubusercontent.com/u/61952761?s=960">
-    <title>Fastre</title>
-    <style>
-        body{
-            background-color: black;
-            font-family: courier;
 
-            display: grid;
-            align-content: center;
-            justify-content: center;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>;</title>
+    
+        <script src="./script.js"></script>
+        <style>
+            body {
+                color: #7fff00ff;
+                background-color: black;
+            }
 
-            position: fixed;
-            
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-        }
+            .screen{
+                position: absolute;
+                text-align: center;
 
-        code{
-            color: #ffb454;
-        }
+                font-family: 'Courier New', Courier, monospace;
 
-        string{
-            color: #aad94c;
-        }
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
-        p{
-            color: black;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    > <code>print(<string>"Hello, World!"</string>)</code>
-    <p>ily, Abby <3</p>
-</body>
+            .input-container{
+                height: 30px;
+                width: 100%;
+
+            }
+            .input-container input{
+                width: 75px;
+                border: transparent;
+                letter-spacing: -2.5px;
+                background-color: transparent;
+
+                font-family: 'Courier New', Courier, monospace;
+                color: yellowgreen;
+                display: inline;
+                -webkit-text-security: square;
+                font-size: small;
+                text-align: center;
+            }
+
+            .screen input:active{
+                border: transparent;
+            }
+
+            .screen input::placeholder{
+                letter-spacing: 0;
+                color: #7fff0069;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: small;
+            }
+
+            .dis{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                color: white;
+                opacity: 0.15;
+                font-size: x-small;
+            }
+
+            @keyframes error{
+                0% {transform: translate(0%); color:red;}
+                25% {transform: translate(-20%);}
+                75% {transform: translate(20%);}
+                100% {transform: translate(0%); color: yellowgreen;}
+            }   
+        </style>
+
+    </head>
+
+    <body>
+        <div class="screen">
+            <p>please enter the 6 digits code...</p>
+            <div class="input-container" id="incon">
+                [<input id="input" pattern="[0-9]+" type="text" placeholder="input..." oninput="check()" onkeydown="enter(this)" maxlength="6"/>]
+            </div>
+        </div>
+
+        <div class="dis">This is all a playful thing of course.</div>
+    </body>
+
 </html>
