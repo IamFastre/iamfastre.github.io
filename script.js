@@ -17,8 +17,10 @@ function enter(ele) {
 
     if(event.key === 'Enter') {
         if (check() === "126957")
-            alert("good job")
+            alert("Oh, I guess you got it.")
         else
-            alert("bad job")
+            alert("Wrong Answer")
+
+        location.reload()
     }
 }
